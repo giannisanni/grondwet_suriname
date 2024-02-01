@@ -11,7 +11,7 @@ from langchain.callbacks import get_openai_callback
 
 def main():
     st.set_page_config(page_title="Grondwet Suriname")
-    st.header("Grondwet suriname")
+    st.header("Grondwet Suriname")
 
     # upload file
     #pdf = st.file_uploader("your pdf", type="pdf")
