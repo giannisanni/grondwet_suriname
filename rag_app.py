@@ -43,7 +43,7 @@ def main():
         knowledge_base = FAISS.from_texts(chunks, embeddings)
 
         # show user input
-        user_question = st.chat_input("Ask a question about your the constitution of Suriname:")
+        user_question = st.chat_input("Ask a question about the constitution of Suriname:")
         if user_question:
             docs = knowledge_base.similarity_search(user_question)
 
