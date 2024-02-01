@@ -15,7 +15,7 @@ def main():
 
     # upload file
     #pdf = st.file_uploader("your pdf", type="pdf")
-    pdf = "grondwet_suriname.pdf"
+    pdf = "grondwet_suriname_no_sources.pdf"
 
     # extract the text
     if pdf is not None:
@@ -38,7 +38,7 @@ def main():
         knowledge_base = FAISS.from_texts(chunks, embeddings)
 
         # show user input
-        user_question = st.text_input("Ask a question about your PDF:")
+        user_question = st.text_input("Ask a question about your the constitution of Suriname:")
         if user_question:
             docs = knowledge_base.similarity_search(user_question)
 
@@ -48,7 +48,7 @@ def main():
                 response = chain.run(input_documents=docs, question=user_question)
                 print(cb)
 
-            st.write(response)
+            st.success(response)
 
 
 if __name__ == '__main__':
